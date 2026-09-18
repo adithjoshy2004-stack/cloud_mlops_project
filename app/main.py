@@ -9,7 +9,7 @@ app = FastAPI(
 )
 
 # Load the trained model
-model = joblib.load("model/iris_model_v1.pkl")
+model = joblib.load("model/iris_model_v2.pkl")
 
 
 # Input data
@@ -25,7 +25,7 @@ class FlowerData(BaseModel):
 def home():
     return {
         "message": "Iris ML API is running",
-        "model_version": "v1"
+        "model_version": "v2"
     }
 
 
@@ -52,5 +52,5 @@ def predict(data: FlowerData):
 
     return {
         "prediction": result,
-        "model_version": "v1"
+        "model_version": "v2"
     }
